@@ -176,6 +176,15 @@ library LibDiamond {
                 } else {
                     selectorInSlotIndex--;
                 }
+                // Repalcing the above with the below code fixes the issue
+                // if (_selectorSlot != 0 || (selectorInSlotIndex != 0 && _selectors[selectorIndex] == 0)) {
+                //     selectorInSlotIndex--;
+                // } else {
+                //     // get last selectorSlot
+                //     selectorSlotCount--;
+                //     _selectorSlot = ds.selectorSlots[selectorSlotCount];
+                //     selectorInSlotIndex = 7;
+                // }
                 bytes4 lastSelector;
                 uint256 oldSelectorsSlotCount;
                 uint256 oldSelectorInSlotPosition;
